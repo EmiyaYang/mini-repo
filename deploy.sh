@@ -3,6 +3,8 @@ set -e
 git branch -D gh-pages || echo ''
 git checkout -b gh-pages
 
+cp package.json ./public
+
 ls | grep -v public | xargs rm -r
  
 cd public  
