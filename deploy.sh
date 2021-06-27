@@ -1,6 +1,6 @@
 set -e
 
-git branch -D gh-pages
+git branch -D gh-pages || echo ''
 git checkout -b gh-pages
 
 ls | grep -v public | grep -v node_modules | xargs rm -r
@@ -17,6 +17,6 @@ git add .
 
 git commit -m "deploy"
 
-git push --set-upstream origin gh-pages
+git push --set-upstream origin gh-pages -f
 
 git checkout master
