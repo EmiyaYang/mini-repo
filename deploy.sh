@@ -1,8 +1,6 @@
 set -e
 
 #  git checkout --orphan gh-pages
-NODE_ENV=prod 
-yarn build
 
 git checkout gh-pages
 

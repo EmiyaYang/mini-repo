@@ -1,5 +1,5 @@
 {
-  "exclude": ["node_modules", "dist", "public"],
+  "exclude": ["node_modules", "public/dist", "public"],
   "compilerOptions": {
     "skipLibCheck": true,
     /* Basic Options */

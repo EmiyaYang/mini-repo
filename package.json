@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=dev rollup -c",
-    "build": ". ./deploy.sh"
+    "build": "NODE_ENV=prod rollup -c && . ./deploy.sh"
   },
   "author": "",
   "license": "ISC",
