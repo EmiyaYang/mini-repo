@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "baseUrl": "copy",
   "scripts": {
     "dev": "NODE_ENV=dev rollup -c",
     "build": "NODE_ENV=prod rollup -c && . ./deploy.sh"
