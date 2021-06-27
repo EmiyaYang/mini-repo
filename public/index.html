@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Repo</title>
+    <style>
+      .paste-area {
+        border: 1px solid skyblue;
+        min-height: 200px;
+        min-width: 300px;
+        margin: 30px;
+        overflow: scroll;
+      }
+
+      body {
+        font-size: 20px;
+      }
+
+      img {
+        width: 100px;
+      }
+
+      .paste-area:active {
+        border: 1px solid tomato;
+      }
+
+      hr {
+        border-color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div style="display: flex; align-items: center">
+        <img src="./doge.png" />
+        <span>To the moon 🚀🚀🚀🚀</span>
+        <button style="margin-left: 1.5em" class="btn btn-primary">Copy</button>
+      </div>
+
+      <h4>Normal Div</h4>
+      <hr />
+      <div class="paste-area"></div>
+
+      <h4>Contenteditable Div</h4>
+
+      <hr />
+      <div contenteditable class="paste-area"></div>
+    </div>
+
+    <script src="../index.js"></script>
+  </body>
+</html>

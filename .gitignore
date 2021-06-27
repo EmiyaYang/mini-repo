@@ -1,0 +1,28 @@
+# Mac OS
+.DS_Store
+
+# node
+*.log
+log
+node_modules
+
+# build
+output/
+dist/
+dist_auto/
+
+# Gulu
+**/typings/auto-generated/
+
+# jest
+coverage
+
+# others
+.env.*
+
+
+inbox.ts
+
+
+# for download test
+__download
