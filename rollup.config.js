@@ -17,10 +17,11 @@ module.exports = {
     format: "esm",
   },
   plugins: [
-    serve({
-      port: 8080,
-      contentBase: "public",
-    }),
+    process.env.NODE_ENV === "dev" &&
+      serve({
+        port: 8080,
+        contentBase: "public",
+      }),
     nodeResolve({
       extensions,
       modulesOnly: true,
