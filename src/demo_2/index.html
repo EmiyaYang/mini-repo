@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copy & Paste</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <style>
+      .paste-area {
+        border: 1px solid skyblue;
+        min-height: 200px;
+        min-width: 300px;
+        margin: 30px;
+        overflow: scroll;
+      }
+
+      body {
+        padding: 20px;
+        font-size: 20px;
+      }
+
+      img {
+        width: 100px;
+      }
+
+      .paste-area:active {
+        border: 1px solid tomato;
+      }
+
+      hr {
+        border-color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <p>
+        <button class="btn btn-primary" id="btn-async2">
+          创建按钮模拟点击复制
+        </button>
+      </p>
+
+      <p>
+        <button class="btn btn-primary" id="btn-async">
+          调用 clipboard API 复制
+        </button>
+      </p>
+
+      <p id="hint" style="color: #aaa"></p>
+    </div>
+
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>

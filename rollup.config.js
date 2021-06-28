@@ -1,7 +1,6 @@
 import path from "path";
 import { babel } from "@rollup/plugin-babel";
 import nodeResolve from "@rollup/plugin-node-resolve";
-import serve from "rollup-plugin-serve";
 import fse from "fs-extra";
 
 const extensions = [".js", ".ts"];
@@ -27,14 +26,15 @@ module.exports = {
     format: "esm",
   },
   plugins: [
-    process.env.NODE_ENV === "dev" &&
-      serve({
-        port: 8080,
-        contentBase: "public",
-      }),
+    // process.env.NODE_ENV === "dev" &&
+    //   serve({
+    //     port: 8080,
+    //     contentBase: "public",
+    //   }),
     nodeResolve({
       extensions,
-      modulesOnly: true,
+      // modulesOnly: true,
+      browser: true,
     }),
     babel({
       exclude: "node_modules/**",

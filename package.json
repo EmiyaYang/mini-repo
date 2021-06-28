@@ -5,7 +5,7 @@
   "main": "dist.js",
   "baseUrl": "copy",
   "scripts": {
-    "dev": "NODE_ENV=dev rollup -c",
+    "dev": "NODE_ENV=dev rollup -c && node ./postbuild.js && http-server",
     "build": "NODE_ENV=prod rollup -c && . ./deploy.sh"
   },
   "author": "",
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@rollup/plugin-babel": "^5.3.0",
+    "copy-to-clipboard": "^3.3.1",
     "html2canvas": "^1.0.0-rc.7"
   }
 }
