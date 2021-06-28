@@ -15,6 +15,7 @@
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-typescript": "^7.14.5",
     "@rollup/plugin-node-resolve": "^13.0.0",
+    "fs-extra": "^10.0.0",
     "rollup": "^2.52.3",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-serve": "^1.1.0",
