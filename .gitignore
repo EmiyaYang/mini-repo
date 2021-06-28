@@ -9,6 +9,7 @@ node_modules
 # build
 output/
 dist/
+dist.js
 dist_auto/
 
 # Gulu

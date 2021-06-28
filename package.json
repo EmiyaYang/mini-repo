@@ -2,7 +2,7 @@
   "name": "tiny-book",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist.js",
   "baseUrl": "copy",
   "scripts": {
     "dev": "NODE_ENV=dev rollup -c",
