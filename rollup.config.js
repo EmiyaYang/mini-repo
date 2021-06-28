@@ -13,7 +13,7 @@ const resolve = function (...args) {
 module.exports = {
   input: resolve("./src/index.ts"),
   output: {
-    file: resolve("./public", pkg.main),
+    file: resolve("./public/dist", pkg.main),
     format: "esm",
   },
   plugins: [
