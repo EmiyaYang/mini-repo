@@ -6,7 +6,7 @@
   "baseUrl": "copy",
   "scripts": {
     "dev": "NODE_ENV=dev rollup -c && node ./postbuild.js && http-server",
-    "build": "NODE_ENV=prod rollup -c && . ./deploy.sh"
+    "build": "NODE_ENV=prod rollup -c && node ./postbuild.js && . ./deploy.sh "
   },
   "author": "",
   "license": "ISC",
