@@ -3,14 +3,14 @@ set -e
 git branch -D gh-pages || echo ''
 git checkout -b gh-pages
 
-cp package.json ./public
+cp package.json ./dist
 
-ls | grep -v public | xargs rm -r
+ls | grep -v dist | xargs rm -r
  
-cd public  
+cd dist  
 cp -r . ..
 cd -
-rm -rf public
+rm -rf dist
 
 rm -rf .babelrc
 
