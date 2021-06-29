@@ -13,29 +13,23 @@ document.querySelectorAll(".paste-area").forEach((item) => {
 button.onclick = async () => {
   const url = root.querySelector("img").src;
 
+  const textBlob = new Blob([root.querySelector(".txt").textContent], {
+    type: "text/plain",
+  });
+
   return fetch(url)
     .then((res) => res.blob())
     .then((data) =>
       // @ts-ignore
-      navigator.clipboard.write([new ClipboardItem({ [data.type]: data })]),
+      navigator.clipboard.write([
+        // @ts-ignore
+        new ClipboardItem({ [data.type]: data, [textBlob.type]: textBlob }),
+      ]),
     )
     .then(() => {
       button.innerHTML = "Copied";
     });
 };
-
-document.addEventListener("copy", (e) => {
-  const selection = getSelection();
-
-  if (selection.type === "Range") {
-    e.clipboardData.setData("Text", selection.toString());
-
-    // 复制按钮文本时同步改变按钮内容会导致复制失败
-    setTimeout(() => {
-      button.innerHTML = "Copied";
-    });
-  }
-});
 
 // 1. 复制截图, 成功
 // 2. 请求同源图片, 复制成功
@@ -57,9 +51,14 @@ document.addEventListener("paste", function (event) {
   }
 
   const items = (event.clipboardData && event.clipboardData.items) || [];
+
   let file = null;
   for (const item of items) {
     const { type } = item;
+
+    item.getAsString((s) => {
+      console.log("test", s);
+    });
 
     if (type.indexOf("image") !== -1) {
       file = item.getAsFile();
@@ -69,7 +68,7 @@ document.addEventListener("paste", function (event) {
       img.src = blobUrl;
 
       target.append(img);
-    } else if (type.match(/^text\/html/)) {
+    } else if (type.match(/^text/)) {
       item.getAsString(function (s) {
         const div = document.createElement("span");
         div.innerHTML = s;
