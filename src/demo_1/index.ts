@@ -46,11 +46,15 @@ document.addEventListener("paste", function (event) {
     }
   }
 
+  event.clipboardData.getData;
+
   if (target.hasAttribute("contenteditable")) {
     return;
   }
 
   const items = (event.clipboardData && event.clipboardData.items) || [];
+
+  let textItem = null;
 
   let file = null;
   for (const item of items) {
@@ -69,14 +73,16 @@ document.addEventListener("paste", function (event) {
 
       target.append(img);
     } else if (type.match(/^text/)) {
-      item.getAsString(function (s) {
-        const div = document.createElement("span");
-        div.innerHTML = s;
-
-        target.append(div);
-      });
+      textItem = item;
     }
   }
+
+  textItem?.getAsString(function (s) {
+    const div = document.createElement("span");
+    div.innerHTML = s;
+
+    target.append(div);
+  });
 
   // reset
   button.innerHTML = "Copy";
