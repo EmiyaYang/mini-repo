@@ -1,6 +1,15 @@
 const root = document.getElementById("app");
 const button = root.querySelector("button");
 
+document.querySelectorAll(".paste-area").forEach((item) => {
+  item.onfocus = function () {
+    this.classList.add("focused");
+  };
+  item.onblur = function () {
+    this.classList.remove("focused");
+  };
+});
+
 button.onclick = async () => {
   const url = root.querySelector("img").src;
 

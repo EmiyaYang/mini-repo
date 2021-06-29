@@ -5,48 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Copy & Paste</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
     <style>
+      html {
+        background-color: #eee;
+      }
+
+      h4 {
+        color: #666;
+      }
+
       .paste-area {
-        border: 1px solid skyblue;
+        border-color: #000;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 5px;
         min-height: 200px;
         min-width: 300px;
-        margin: 30px;
+        margin: 30px 0;
         overflow: scroll;
+      }
+
+      .focused {
+        border-color: tomato;
       }
 
       body {
         font-size: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        padding-top: 10px;
+        background: none;
+      }
+
+      [contenteditable] {
+        outline: 0px solid transparent;
       }
 
       img {
-        width: 100px;
-      }
-
-      .paste-area:active {
-        border: 1px solid tomato;
-      }
-
-      hr {
-        border-color: #ccc;
+        width: 80px;
       }
     </style>
   </head>
   <body>
     <div id="app">
-      <div style="display: flex; align-items: center">
-        <img src="./doge.png" />
-        <span>To the moon 🚀🚀🚀🚀</span>
+      <div style="display: flex; align-items: center; margin-bottom: 20px">
+        <img src="./doge.png" style="margin-right: 10px" />
+
+        <span>To the moon <br />🚀🚀🚀🚀</span>
         <button style="margin-left: 1.5em" class="btn btn-primary">Copy</button>
       </div>
 
       <h4>Normal Div</h4>
-      <hr />
-      <div class="paste-area"></div>
+      <div class="paste-area" tabindex="100"></div>
 
       <h4>Contenteditable Div</h4>
 
-      <hr />
-      <div contenteditable class="paste-area"></div>
+      <div contenteditable class="paste-area" tabindex="101"></div>
+
+      <div style="margin-top: 20px; color: #666; font-size: 16px">
+        <div>1. Click button to copy</div>
+        <div>2. Select then copy</div>
+        <div>3. Take screenshot to copy</div>
+      </div>
     </div>
 
     <script src="./index.js"></script>
