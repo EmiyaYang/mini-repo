@@ -10,30 +10,51 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
     />
     <style>
-      iframe {
-        min-height: 400px;
+      body {
+        padding: 10px;
+      }
+
+      .block {
+        margin: 0 auto;
+        width: 250px;
+        /*   height: 200px; */
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      textarea {
+        width: 100%;
+        display: block;
+      }
+
+      .block-paste-placeholder {
+        display: none;
+      }
+
+      #hint {
+        color: #666;
       }
     </style>
   </head>
   <body>
-    <div id="app">
-      <iframe
-        allow="clipboard-read; clipboard-write"
-        src="https://async-clipboard-text.glitch.me/"
-        style="height: 100%; width: 100%; border: 0"
-        title="async-clipboard-text on Glitch"
-      ></iframe>
+    <div class="block">
+      <div class="block-paste-placeholder">不支持在 Docs 外粘贴 block</div>
 
-      <hr />
-
-      <iframe
-        allow="clipboard-read; clipboard-write"
-        src="https://async-clipboard-api.glitch.me/"
-        style="height: 100%; width: 100%; border: 0"
-        title="async-clipboard-api on Glitch"
-      ></iframe>
-
-      👻
+      <img
+        src="https://static01.nyt.com/images/2021/05/16/fashion/13DOGECOIN-1/13DOGECOIN-1-mediumSquareAt3X.jpg"
+      />
     </div>
+
+    <!-- <div>Select and copy me!</div> -->
+
+    <br />
+
+    <p id="hint"></p>
+
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
