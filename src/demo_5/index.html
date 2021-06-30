@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copy & Paste</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        padding: 10px;
+      }
+
+      .btns {
+        margin: 20px auto;
+        box-sizing: border-box;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .card {
+        width: 500px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+      }
+
+      img {
+        max-width: 200px;
+      }
+
+      textarea {
+        width: 100%;
+        display: block;
+      }
+
+      .block-paste-placeholder {
+        display: none;
+      }
+
+      #hint,
+      #async-hint {
+        color: #666;
+        text-align: center;
+      }
+
+      button {
+        display: block;
+        margin: 10px auto;
+      }
+
+      button + button {
+        margin-left: 10px;
+      }
+
+      #result {
+        font-size: 20px;
+        width: 500px;
+        height: 300px;
+        border: 1px dashed #666;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .head {
+        color: #666;
+        line-height: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="btns">
+        <button class="sync btn"></button>
+        <button class="sync btn"></button>
+        <button class="sync btn"></button>
+        <button class="sync btn"></button>
+      </div>
+      <p id="hint">来测测同步复制数据耗时吧~</p>
+    </div>
+
+    <div class="card">
+      <div class="btns">
+        <button class="async btn"></button>
+        <button class="async btn"></button>
+        <button class="async btn"></button>
+        <button class="async btn"></button>
+      </div>
+
+      <p id="async-hint">来测测异步复制数据耗时吧~</p>
+    </div>
+
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
