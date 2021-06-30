@@ -2,16 +2,38 @@ import copy from "https://cdn.skypack.dev/copy-to-clipboard@3.3.1";
 
 let loading = false;
 
+function genStr(n) {
+  let c = "1";
+  while (c.length < n) {
+    c += c;
+  }
+
+  return c;
+}
+
 const buttonArr = [
-  { size: 1024, label: "1KB" },
-  { size: 1024 * 1024, label: "1MB" },
-  { size: 1024 * 1024 * 10, label: "10MB" },
-  { size: 1024 * 1024 * 100, label: "100MB", danger: true },
+  { size: 1024, label: "1KB", data: genStr(1024) },
+  {
+    size: 1024 * 1024,
+    label: "1MB",
+    data: genStr(1024 * 1024),
+  },
+  {
+    size: 1024 * 1024 * 10,
+    label: "10MB",
+    data: genStr(1024 * 1024 * 10),
+  },
+  {
+    size: 1024 * 1024 * 100,
+    label: "100MB",
+    danger: true,
+    data: genStr(1024 * 1024 * 100),
+  },
 ];
 
 Array.from(document.querySelectorAll("button.sync")).forEach(
   (button, index) => {
-    const { size, label, danger } = buttonArr[index];
+    const { data, label, danger } = buttonArr[index];
 
     button.innerHTML = label;
 
@@ -32,7 +54,7 @@ Array.from(document.querySelectorAll("button.sync")).forEach(
 
       const startAt = +new Date();
 
-      copy(Array(size).fill(1).join(""));
+      copy(data);
 
       const endAt = +new Date();
 
@@ -47,7 +69,7 @@ Array.from(document.querySelectorAll("button.sync")).forEach(
 
 Array.from(document.querySelectorAll("button.async")).forEach(
   (button, index) => {
-    const { size, label, danger } = buttonArr[index];
+    const { size, label, danger, data } = buttonArr[index];
 
     button.innerHTML = label;
 
@@ -68,7 +90,7 @@ Array.from(document.querySelectorAll("button.async")).forEach(
 
       const startAt = +new Date();
 
-      await navigator.clipboard.writeText(Array(size).fill(1).join(""));
+      await navigator.clipboard.writeText(data);
 
       const endAt = +new Date();
 
